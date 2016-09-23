@@ -1,7 +1,7 @@
 server {
     listen 80;
-    server_name qsq.com;
-    root /home/vagrant/php/qsq/project_web/public;
+    server_name app.com;
+    root /home/vagrant/php/app/project_web/public;
 
     index index.html index.htm index.php;
 
@@ -12,20 +12,20 @@ server {
     }
 	
 	location ^~/mobile/ {
-		alias /home/vagrant/php/qsq/h5/src/;
-		  #   /home/vagrant/php/qsq/h5/src		
+		alias /home/vagrant/php/app/h5/src/;
+		  #   /home/vagrant/php/app/h5/src		
 	}
 
 	location = /mobile/index.html {
         	
-		alias /home/vagrant/php/qsq/h5/src/index.html;
+		alias /home/vagrant/php/app/h5/src/index.html;
 		add_header Cache-Control no-cache,no-store;
     	}
     location = /favicon.ico { access_log off; log_not_found off; }
     location = /robots.txt  { access_log off; log_not_found off; }
 
     access_log off;
-    error_log  /var/log/nginx/qsq.com-error.log error;
+    error_log  /var/log/nginx/app.com-error.log error;
     error_page 404 /index.php;
 
     sendfile off;
