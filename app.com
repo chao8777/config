@@ -13,14 +13,14 @@ server {
 	
 	location ^~/mobile/ {
 		alias /home/vagrant/php/app/h5/src/;
-		  #   /home/vagrant/php/app/h5/src		
+		#alias /home/vagrant/php/app/h5/src		
 	}
 
-	location = /mobile/index.html {
-        	
+	location = /mobile/index.html {	
 		alias /home/vagrant/php/app/h5/src/index.html;
 		add_header Cache-Control no-cache,no-store;
-    	}
+    }
+
     location = /favicon.ico { access_log off; log_not_found off; }
     location = /robots.txt  { access_log off; log_not_found off; }
 
